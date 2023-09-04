@@ -1,0 +1,45 @@
+<div class="row justify-content-center">
+    <div class="col-md-4 text-center">
+        <h1>TODO CATEGORIES</h1>
+        <p class="text-info">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <form action="" #f="ngForm" (ngSubmit)="f.valid && onSubmit(f)">
+            <div class="row">
+                <div class="col-md-10">
+                    <input type="text" placeholder="catgory here..." class="form-control drop-shadow" name="categoryName" [(ngModel)]="categoryName" required #category="ngModel" [ngClass]="{'border-danger':f.submitted && category.invalid}">
+                </div>
+                <button type="submit" class="btn btn-primary col-md-2 btn-block drop-shadow btn-todo">{{dataStatus}}</button>
+                <div class="text-danger ms-1" *ngIf="f.submitted && category.invalid && category.errors['required']">
+                    <small>category is required...</small>
+                </div>
+            </div>            
+        </form>
+    </div>
+</div>
+
+<div class="row categories-list" >
+    <div class="col-md-3" *ngFor = "let category of categoryList">
+        <div class="card drop-shadow " [style.border-left-color]="category.data.colorCode">
+            <div class="card-body">
+                <div class="clearfix">
+                    <div class="float-start">
+                        <div class="badge badge-cat">CATEGORY</div>
+                    </div>
+                    <div class="float-end cat-tools">
+                        <small><i class="fa fa-pencil-alt text-success" (click)="onEdit(category.data.category,category.id)"></i></small>
+                        <small><i class="fas fa-trash text-danger" (click)="onDelete(category.id)"></i></small>
+                    </div>
+                </div>
+                <div class="todo-content" [routerLink]="['todo',category.id]">
+                    <h3 [style.color]="category.data.colorCode">{{category.data.category}}</h3>
+                    <small class="text-secondary">Lorem ipsum dolor sit amet yes consectetur adipisicing elit.</small>
+                </div>
+                <span class="badge badge-todo">{{category.data.todoCount}}-todos</span>
+            </div>
+        </div>
+    </div>
+</div>

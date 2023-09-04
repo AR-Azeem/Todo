@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+    background-image: url("./assets/Bckground.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.drop-shadow{
+    -moz-box-shadow: 0px 2px 30px -7px rgba(71,114,254,0.48);
+    box-shadow: 0px 0px 33px -7px rgba(71,114,254,0.3);
+}
+
+input[type=text]{
+    height:40px;
+    padding-left: 10px;
+    background-color: #fefefe;
+}
+
+.btn-todo{
+    background-color: #e9eeff!important;
+    color:#4722fe !important;
+    height: 40px !important;
+    border: none !important;
+}
+border-danger{
+    border:1px solid red;
+}

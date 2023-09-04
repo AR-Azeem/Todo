@@ -1,0 +1,35 @@
+.card{
+    border:none;
+    border-left:5px solid #0000;
+    margin-top:50px;
+    border-top-left-radius:30px;
+
+}
+.badge-todo{
+    background-color: #fef0f0;
+    color:#f04141;
+    margin-top:50px;
+}
+.badge-cat{
+    background-color: #e9eeff;
+    color:#4772fe
+
+}
+.cat-tools{
+    display:none
+}
+
+.cat-tools i{
+    cursor:pointer;
+    margin:0px 5px;
+}
+
+.categories-list .card:hover{
+    background-color: #f8f8f8;
+    cursor:pointer;
+}
+
+.categories-list .card:hover .cat-tools{
+    display: inline;
+}
+
